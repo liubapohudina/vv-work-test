@@ -1,0 +1,54 @@
+{
+  "common": {
+    "findJob": "Find a job",
+    "findEmployee": "Find an employee",
+    "about": "About us",
+    "partners": "Partners",
+    "contacts": "Contacts",
+    "login": "Log in",
+    "comingSoon": "Coming soon",
+    "loginComingSoon": "Authentication will be available in future versions of VV Work.",
+    "learnMore": "Learn more"
+  },
+  "home": {
+    "hero": {
+      "badge": "Work without borders",
+      "titleLine1": "Find a job.",
+      "titleLine2": "Find an employee.",
+      "titleLine3Before": "Work",
+      "titleAccent": "in Europe.",
+      "description": "VV Work is a platform connecting people and opportunities across Europe.",
+      "stats": {
+        "workers": "successful placements",
+        "partners": "partner companies",
+        "satisfaction": "satisfied candidates"
+      }
+    }
+  },
+  "categories": {
+    "title": "Popular categories",
+    "all": "All categories",
+    "construction": "Construction",
+    "manufacturing": "Manufacturing",
+    "logistics": "Logistics",
+    "horeca": "Hospitality",
+    "it": "IT",
+    "drivers": "Drivers",
+    "other": "Other"
+  },
+  "employer": {
+    "badge": "For employers",
+    "title": "Looking for employees?",
+    "description": "Find verified candidates quickly and conveniently.",
+    "button": "Find an employee"
+  },
+  "footer": {
+    "company": "Company",
+    "candidates": "For candidates",
+    "employers": "For employers",
+    "privacy": "Privacy Policy",
+    "cookies": "Cookie Policy",
+    "terms": "Terms of Use",
+    "rights": "All rights reserved."
+  }
+}

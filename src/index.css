@@ -1,0 +1,309 @@
+@import 'tailwindcss';
+
+/* =========================
+   Fonts
+========================= */
+
+@font-face {
+  font-family: 'Manrope';
+  src:
+    url('@assets/fonts/Manrope-Regular.woff2') format('woff2'),
+    url('@assets/fonts/Manrope-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Manrope';
+  src:
+    url('@assets/fonts/Manrope-Medium.woff2') format('woff2'),
+    url('@assets/fonts/Manrope-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Manrope';
+  src:
+    url('@assets/fonts/Manrope-SemiBold.woff2') format('woff2'),
+    url('@assets/fonts/Manrope-SemiBold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Manrope';
+  src:
+    url('@assets/fonts/Manrope-Bold.woff2') format('woff2'),
+    url('@assets/fonts/Manrope-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Manrope';
+  src:
+    url('@assets/fonts/Manrope-ExtraBold.woff2') format('woff2'),
+    url('@assets/fonts/Manrope-ExtraBold.woff') format('woff');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* =========================
+   Theme tokens
+========================= */
+
+:root {
+  color-scheme: dark;
+
+  --font-family-base: 'Manrope', system-ui, sans-serif;
+
+  /* Brand */
+  --color-primary: #22cc56;
+  --color-primary-hover: #38df6a;
+  --color-accent: #84cc16;
+
+  /* Backgrounds */
+  --color-bg: #0a0f0b;
+  --color-surface: #111815;
+  --color-card: #1a231d;
+  --color-card-hover: #202c24;
+
+  /* Text */
+  --color-text-primary: #f6faf9;
+  --color-text-secondary: #94a2a8;
+  --color-text-muted: #6f7b78;
+
+  /* Borders */
+  --color-border: rgba(255, 255, 255, 0.1);
+  --color-border-strong: rgba(255, 255, 255, 0.16);
+
+  /* Status */
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+  --color-success: #22c55e;
+
+  /* Effects */
+  --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.18);
+
+  --shadow-glow: 0 0 40px rgba(34, 204, 86, 0.14);
+
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+}
+
+[data-theme='light'] {
+  color-scheme: light;
+
+  /* Brand */
+  --color-primary: #20c858;
+  --color-primary-hover: #17b64b;
+  --color-accent: #65c80b;
+
+  /* Backgrounds */
+  --color-bg: #f4f7f5;
+  --color-surface: #ffffff;
+  --color-card: #edf3ef;
+  --color-card-hover: #e5eee8;
+
+  /* Text */
+  --color-text-primary: #101512;
+  --color-text-secondary: #64716b;
+  --color-text-muted: #89938f;
+
+  /* Borders */
+  --color-border: rgba(16, 21, 18, 0.1);
+  --color-border-strong: rgba(16, 21, 18, 0.16);
+
+  /* Status */
+  --color-warning: #e58a00;
+  --color-error: #dc3434;
+  --color-success: #1fae50;
+
+  /* Effects */
+  --shadow-card: 0 10px 30px rgba(24, 45, 33, 0.08);
+
+  --shadow-glow: 0 0 40px rgba(32, 200, 88, 0.1);
+}
+
+/* =========================
+   Reset
+========================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--color-bg);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+
+  font-family: 'Manrope', Arial, sans-serif;
+
+  font-weight: 400;
+  font-synthesis: none;
+
+  background: var(--color-bg);
+  color: var(--color-text-primary);
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+/* =========================
+   Selection / Focus
+========================= */
+
+::selection {
+  background: var(--color-primary);
+  color: #07110d;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+/* =========================
+   Typography
+========================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+h3 {
+  font-size: clamp(1.35rem, 2vw, 1.75rem);
+}
+
+/* =========================
+   Utility design classes
+========================= */
+
+.app-container {
+  width: min(100% - 32px, 1280px);
+  margin-inline: auto;
+}
+
+.surface {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+}
+
+.card {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+}
+
+.glass {
+  background: color-mix(in srgb, var(--color-surface) 82%, transparent);
+
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  border: 1px solid var(--color-border);
+}
+
+.text-primary {
+  color: var(--color-text-primary);
+}
+
+.text-secondary {
+  color: var(--color-text-secondary);
+}
+
+.text-muted {
+  color: var(--color-text-muted);
+}
+
+.bg-primary {
+  background: var(--color-primary);
+}
+
+.border-theme {
+  border-color: var(--color-border);
+}
+@media (max-width: 768px) {
+  .app-container {
+    width: min(100% - 24px, 1280px);
+  }
+}
+
+@media (max-width: 480px) {
+  .app-container {
+    width: min(100% - 20px, 1280px);
+  }
+}
