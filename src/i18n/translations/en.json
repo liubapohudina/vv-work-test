@@ -8,7 +8,10 @@
     "login": "Log in",
     "comingSoon": "Coming soon",
     "loginComingSoon": "Authentication will be available in future versions of VV Work.",
-    "learnMore": "Learn more"
+    "learnMore": "Learn more",
+    "loading": "Loading...",
+    "loadError": "Failed to load data",
+    "retry": "Try again"
   },
   "home": {
     "hero": {
@@ -23,15 +26,34 @@
         "partners": "partner companies",
         "satisfaction": "satisfied candidates"
       }
+    },
+    "search": {
+      "tabsLabel": "Search type",
+      "findJob": "Find a job",
+      "findEmployee": "Find an employee",
+      "jobPlaceholder": "Position, company or keyword",
+      "employeePlaceholder": "Profession or specialization",
+      "country": "Country",
+      "countryLabel": "Select country",
+      "submit": "Search",
+      "popular": "Popular searches",
+      "error": "Search failed. Please try again.",
+      "resultsFound": "Jobs found: {{count}}",
+      "noResults": "No results found for your search."
     }
   },
+  "countries": {
+    "poland": "Poland",
+    "germany": "Germany",
+    "netherlands": "Netherlands",
+    "austria": "Austria",
+    "czechRepublic": "Czech Republic"
+  },
   "categories": {
-    "title": "Popular categories",
-    "all": "All categories",
     "construction": "Construction",
     "manufacturing": "Manufacturing",
     "logistics": "Logistics",
-    "horeca": "Hospitality",
+    "hospitality": "Hospitality",
     "it": "IT",
     "drivers": "Drivers",
     "other": "Other"
@@ -50,5 +72,7 @@
     "cookies": "Cookie Policy",
     "terms": "Terms of Use",
     "rights": "All rights reserved."
-  }
+  },
+  "loadError": "Failed to load data.",
+  "retry": "Try again"
 }

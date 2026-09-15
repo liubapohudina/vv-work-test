@@ -1,6 +1,8 @@
 import { Building2, MapPin, Star, UsersRound } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
+import { JobSearch } from '../JobSearch';
+
 import heroBg from '@/assets/images/hero-bg.webp';
 
 const stats = [
@@ -87,12 +89,8 @@ export const Hero = () => {
               {t('home.hero.description')}
             </p>
 
-            {/* SEARCH COMPONENT PLACEHOLDER */}
             <div className="mt-8 sm:mt-10 min-h-[140px] w-full max-w-[780px] rounded-[24px] border border-white/10 bg-white/[0.03] p-4 backdrop-blur-md flex items-center justify-center">
-              <span className="text-sm text-white/40 font-medium">
-                {/* сюди потім додамо компонент пошуку */}[ Пошуковий компонент
-                ]
-              </span>
+              <JobSearch />
             </div>
           </div>
 

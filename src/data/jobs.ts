@@ -1,0 +1,88 @@
+import type { Job } from '@/types/job';
+
+export const jobs: Job[] = [
+  {
+    id: '1',
+    title: 'Водій категорії B',
+    company: 'Euro Transport',
+    country: 'poland',
+    city: 'Warsaw',
+    category: 'drivers',
+    salary: {
+      from: 1600,
+      to: 2200,
+      currency: 'EUR',
+    },
+    description: 'Робота водієм у міжнародній транспортній компанії.',
+  },
+  {
+    id: '2',
+    title: 'Працівник на виробництво',
+    company: 'Tech Production',
+    country: 'germany',
+    city: 'Berlin',
+    category: 'manufacturing',
+    salary: {
+      from: 2000,
+      to: 2600,
+      currency: 'EUR',
+    },
+    description: 'Робота на сучасному виробництві.',
+  },
+  {
+    id: '3',
+    title: 'Будівельник',
+    company: 'Build Europe',
+    country: 'poland',
+    city: 'Krakow',
+    category: 'construction',
+    salary: {
+      from: 1800,
+      to: 2400,
+      currency: 'EUR',
+    },
+    description: 'Будівельні роботи на обʼєктах компанії.',
+  },
+  {
+    id: '4',
+    title: 'Frontend Developer',
+    company: 'Digital Europe',
+    country: 'netherlands',
+    city: 'Amsterdam',
+    category: 'it',
+    salary: {
+      from: 3200,
+      to: 4500,
+      currency: 'EUR',
+    },
+    description: 'React та TypeScript розробка.',
+  },
+  {
+    id: '5',
+    title: 'Працівник готелю',
+    company: 'Hotel Group',
+    country: 'austria',
+    city: 'Vienna',
+    category: 'hospitality',
+    salary: {
+      from: 1700,
+      to: 2100,
+      currency: 'EUR',
+    },
+    description: 'Робота у міжнародній мережі готелів.',
+  },
+  {
+    id: '6',
+    title: 'Працівник складу',
+    company: 'Logistics Group',
+    country: 'czech-republic',
+    city: 'Prague',
+    category: 'logistics',
+    salary: {
+      from: 1500,
+      to: 1900,
+      currency: 'EUR',
+    },
+    description: 'Комплектація та пакування замовлень.',
+  },
+];
