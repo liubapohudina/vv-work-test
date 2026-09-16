@@ -13,6 +13,7 @@ export type Job = {
   company: string;
   country: string;
   city: string;
+  partnerId: string;
   category: JobCategory;
   salary: {
     from: number;

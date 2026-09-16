@@ -27,6 +27,10 @@
         "satisfaction": "satisfied candidates"
       }
     },
+    "categories": {
+      "title": "Popular categories",
+      "vacancies": "{{count}} vacancies"
+    },
     "search": {
       "tabsLabel": "Search type",
       "findJob": "Find a job",
@@ -39,7 +43,10 @@
       "popular": "Popular searches",
       "error": "Search failed. Please try again.",
       "resultsFound": "Jobs found: {{count}}",
-      "noResults": "No results found for your search."
+      "foundAt": "Available from",
+      "noResults": "No results found for your search.",
+      "candidatesFound": "Candidates found: {{count}}",
+      "jobsFound": "Jobs found: {{count}}"
     }
   },
   "countries": {
@@ -56,7 +63,9 @@
     "hospitality": "Hospitality",
     "it": "IT",
     "drivers": "Drivers",
-    "other": "Other"
+    "other": "Other",
+    "title": "Popular categories",
+    "vacancies": "{{count}} vacancies"
   },
   "employer": {
     "badge": "For employers",

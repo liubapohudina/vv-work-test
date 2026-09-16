@@ -2,8 +2,9 @@ import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { useDebounce } from '@/hooks/useDebounce';
+import { getCandidates } from '@/services/candidatesApi';
 import { getJobs } from '@/services/jobsApi';
-import type { JobCategory } from '@/types/job';
+import type { Job, JobCategory } from '@/types/job';
 
 import { JobSearchForm } from './JobSearchForm';
 import { JobSearchStatus } from './JobSearchStatus';
@@ -15,11 +16,14 @@ export const JobSearch = () => {
   const { t } = useTranslation();
 
   const [mode, setMode] = useState<SearchMode>('job');
+
   const [query, setQuery] = useState('');
   const [country, setCountry] = useState('');
   const [category, setCategory] = useState<JobCategory | undefined>();
 
+  const [jobs, setJobs] = useState<Job[]>([]);
   const [resultsCount, setResultsCount] = useState(0);
+
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [retryKey, setRetryKey] = useState(0);
@@ -33,6 +37,7 @@ export const JobSearch = () => {
     let ignore = false;
 
     if (!hasFilters) {
+      setJobs([]);
       setResultsCount(0);
       setError(null);
       setIsLoading(false);
@@ -42,25 +47,46 @@ export const JobSearch = () => {
       };
     }
 
-    const loadJobs = async () => {
+    const loadResults = async () => {
       try {
         setIsLoading(true);
         setError(null);
 
-        const result = await getJobs({
+        const searchParams = {
           query: debouncedQuery.trim(),
           country,
           category,
-        });
+        };
 
-        if (!ignore) {
+        if (mode === 'job') {
+          const result = await getJobs(searchParams);
+
+          if (ignore) {
+            return;
+          }
+
+          setJobs(result.items);
           setResultsCount(result.total);
+
+          return;
         }
+
+        const result = await getCandidates(searchParams);
+
+        if (ignore) {
+          return;
+        }
+
+        setJobs([]);
+        setResultsCount(result.total);
       } catch {
-        if (!ignore) {
-          setResultsCount(0);
-          setError(t('home.search.error'));
+        if (ignore) {
+          return;
         }
+
+        setJobs([]);
+        setResultsCount(0);
+        setError(t('home.search.error'));
       } finally {
         if (!ignore) {
           setIsLoading(false);
@@ -68,29 +94,47 @@ export const JobSearch = () => {
       }
     };
 
-    void loadJobs();
+    void loadResults();
 
     return () => {
       ignore = true;
     };
-  }, [debouncedQuery, country, category, retryKey, hasFilters, t]);
+  }, [mode, debouncedQuery, country, category, retryKey, hasFilters, t]);
 
   const handleModeChange = (newMode: SearchMode) => {
+    if (newMode === mode) {
+      return;
+    }
+
     setMode(newMode);
+
     setQuery('');
     setCountry('');
     setCategory(undefined);
+
+    setJobs([]);
     setResultsCount(0);
+
     setError(null);
+    setIsLoading(false);
   };
 
   const handleQueryChange = (value: string) => {
     setQuery(value);
-    setCategory(undefined);
+
+    if (category) {
+      setCategory(undefined);
+    }
+  };
+
+  const handleCountryChange = (value: string) => {
+    setCountry(value);
   };
 
   const handleCategoryChange = (value: JobCategory) => {
-    setCategory((current) => (current === value ? undefined : value));
+    setCategory((currentCategory) =>
+      currentCategory === value ? undefined : value,
+    );
 
     setQuery('');
   };
@@ -118,7 +162,7 @@ export const JobSearch = () => {
         isLoading={isLoading}
         onModeChange={handleModeChange}
         onQueryChange={handleQueryChange}
-        onCountryChange={setCountry}
+        onCountryChange={handleCountryChange}
         onSubmit={handleSubmit}
       />
 
@@ -128,9 +172,11 @@ export const JobSearch = () => {
       />
 
       <JobSearchStatus
+        mode={mode}
         isVisible={hasFilters}
         isLoading={isLoading}
         error={error}
+        jobs={jobs}
         resultsCount={resultsCount}
         onRetry={handleRetry}
       />

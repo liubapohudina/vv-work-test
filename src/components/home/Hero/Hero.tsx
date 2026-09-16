@@ -115,12 +115,6 @@ export const Hero = () => {
                         aria-hidden="true"
                         className="relative z-10 sm:hidden"
                       />
-                      <Icon
-                        size={27}
-                        strokeWidth={2.1}
-                        aria-hidden="true"
-                        className="relative z-10 hidden sm:block"
-                      />
                     </div>
 
                     <div className="min-w-0">

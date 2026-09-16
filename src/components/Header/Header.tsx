@@ -8,6 +8,7 @@ import { LanguageSwitcher } from '@/components/ui/LanguageSwitcher';
 import { ThemeToggle } from '@/components/ui/ThemeToggle';
 import { Button } from '@/components/ui/Button';
 import { Toast } from '@/components/ui/Toast';
+import logo from '@/assets/images/logo.webp';
 
 export const Header = () => {
   const { t } = useTranslation();
@@ -96,10 +97,7 @@ export const Header = () => {
             onClick={closeMenu}
             className="flex shrink-0 items-center gap-2 font-bold text-white"
           >
-            <span className="text-xl font-extrabold tracking-[-0.12em] text-[var(--color-primary)]">
-              VV
-            </span>
-            <span className="text-[17px]">Work</span>
+            <img src={logo} alt="logo" w-76 h-25 />
           </Link>
 
           <nav

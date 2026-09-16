@@ -3,6 +3,7 @@ import type { Job } from '@/types/job';
 export const jobs: Job[] = [
   {
     id: '1',
+    partnerId: 'partner-1',
     title: 'Водій категорії B',
     company: 'Euro Transport',
     country: 'poland',
@@ -17,6 +18,7 @@ export const jobs: Job[] = [
   },
   {
     id: '2',
+    partnerId: 'partner-2',
     title: 'Працівник на виробництво',
     company: 'Tech Production',
     country: 'germany',
@@ -31,6 +33,7 @@ export const jobs: Job[] = [
   },
   {
     id: '3',
+    partnerId: 'partner-3',
     title: 'Будівельник',
     company: 'Build Europe',
     country: 'poland',
@@ -45,6 +48,7 @@ export const jobs: Job[] = [
   },
   {
     id: '4',
+    partnerId: 'partner-4',
     title: 'Frontend Developer',
     company: 'Digital Europe',
     country: 'netherlands',
@@ -59,6 +63,7 @@ export const jobs: Job[] = [
   },
   {
     id: '5',
+    partnerId: 'partner-5',
     title: 'Працівник готелю',
     company: 'Hotel Group',
     country: 'austria',
@@ -73,6 +78,7 @@ export const jobs: Job[] = [
   },
   {
     id: '6',
+    partnerId: 'partner-6',
     title: 'Працівник складу',
     company: 'Logistics Group',
     country: 'czech-republic',
