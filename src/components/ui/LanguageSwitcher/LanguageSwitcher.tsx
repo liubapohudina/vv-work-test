@@ -12,7 +12,13 @@ import {
   type Language,
 } from '@/i18n/config';
 
-export const LanguageSwitcher = () => {
+type LanguageSwitcherProps = {
+  tone?: 'default' | 'onDark';
+};
+
+export const LanguageSwitcher = ({
+  tone = 'default',
+}: LanguageSwitcherProps) => {
   const { i18n } = useTranslation();
 
   const navigate = useNavigate();
@@ -57,17 +63,38 @@ export const LanguageSwitcher = () => {
         onClick={() => setIsOpen((prev) => !prev)}
         aria-expanded={isOpen}
         aria-haspopup="listbox"
-        className="
+        className={`
           flex items-center gap-2
           rounded-full
           px-3 py-2
           text-sm font-semibold
-          text-white
-        "
+          transition-colors duration-200
+
+          ${
+            tone === 'onDark'
+              ? `
+                text-white/80
+                hover:bg-white/[0.06]
+                hover:text-white
+              `
+              : `
+                text-[var(--color-text-secondary)]
+                hover:bg-[var(--color-card)]
+                hover:text-[var(--color-text-primary)]
+              `
+          }
+        `}
       >
         {languages[currentLanguage].label}
 
-        <ChevronDown size={14} />
+        <ChevronDown
+          size={14}
+          aria-hidden="true"
+          className={`
+            transition-transform duration-200
+            ${isOpen ? 'rotate-180' : ''}
+          `}
+        />
       </button>
 
       {isOpen && (
@@ -82,26 +109,45 @@ export const LanguageSwitcher = () => {
             border-[var(--color-border)]
             bg-[var(--color-surface)]
             p-1
+            shadow-[var(--shadow-card)]
           "
         >
-          {supportedLanguages.map((language) => (
-            <button
-              key={language}
-              type="button"
-              role="option"
-              aria-selected={currentLanguage === language}
-              onClick={() => void handleLanguageChange(language)}
-              className="
+          {supportedLanguages.map((language) => {
+            const isActive = currentLanguage === language;
+
+            return (
+              <button
+                key={language}
+                type="button"
+                role="option"
+                aria-selected={isActive}
+                onClick={() => void handleLanguageChange(language)}
+                className={`
                   w-full
                   rounded-lg
                   px-3 py-2
                   text-left
                   text-sm
-                "
-            >
-              {languages[language].label}
-            </button>
-          ))}
+                  font-medium
+                  transition-colors duration-200
+
+                  ${
+                    isActive
+                      ? `
+                        bg-[rgba(34,204,86,0.08)]
+                        text-[var(--color-primary)]
+                      `
+                      : `
+                        text-[var(--color-text-primary)]
+                        hover:bg-[var(--color-card)]
+                      `
+                  }
+                `}
+              >
+                {languages[language].label}
+              </button>
+            );
+          })}
         </div>
       )}
     </div>
