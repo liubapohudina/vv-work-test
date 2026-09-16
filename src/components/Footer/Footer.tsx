@@ -281,7 +281,7 @@ export const Footer = () => {
             className="
               text-[11px]
               font-medium
-              text-white/40
+              text-white/50
             "
           >
             © 2026 VV Work. {t('footer.rights')}
