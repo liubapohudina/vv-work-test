@@ -5,6 +5,7 @@ import { Outlet, useNavigate, useParams } from 'react-router-dom';
 import { Footer } from '@/components/Footer';
 import { Header } from '@/components/Header';
 import { PageLoader } from '@/components/ui/PageLoader';
+import { CookieBanner } from '@/components/CookieBanner';
 import { ScrollToHash } from './ScrollToHash';
 
 import { DEFAULT_LANGUAGE, isSupportedLanguage } from '@/i18n/config';
@@ -43,6 +44,8 @@ export const PageLayout = () => {
       </main>
 
       <Footer />
+
+      <CookieBanner />
     </>
   );
 };

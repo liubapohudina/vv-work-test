@@ -13,6 +13,15 @@
     "loadError": "Failed to load data",
     "retry": "Try again"
   },
+  "cookieBanner": {
+    "ariaLabel": "Cookie settings",
+    "title": "We use cookies",
+    "description": "Cookies help us keep VV Work working correctly and improve your experience.",
+    "learnMore": "Learn more about cookies",
+    "accept": "Accept",
+    "reject": "Reject",
+    "close": "Close notification"
+  },
   "home": {
     "hero": {
       "badge": "Work without borders",
@@ -172,6 +181,12 @@
     },
     "logisticsGroup": {
       "description": "A logistics company providing warehousing and transportation services."
+    }
+  },
+  "seo": {
+    "home": {
+      "title": "Jobs in Europe — Find Jobs and Employees | VV Work",
+      "description": "VV Work is a platform for finding jobs and employees across Europe. Discover current vacancies, verified employers and candidates in European countries."
     }
   }
 }
