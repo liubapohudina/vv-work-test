@@ -142,6 +142,8 @@
     "vacancies": "{{count}} vacancies"
   },
   "footer": {
+    "tagline": "More than work. More opportunities.",
+    "navigation": "Navigation",
     "company": "Company",
     "candidates": "For candidates",
     "employers": "For employers",
