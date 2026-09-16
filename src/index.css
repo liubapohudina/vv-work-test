@@ -299,3 +299,33 @@ h1 {
     width: min(100% - 20px, 1280px);
   }
 }
+@keyframes about-flow {
+  0% {
+    left: 0;
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  85% {
+    opacity: 1;
+  }
+
+  100% {
+    left: calc(100% - 6px);
+    opacity: 0;
+  }
+}
+
+.about-flow-dot {
+  animation: about-flow 2.2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-flow-dot {
+    animation: none;
+    left: 50%;
+  }
+}

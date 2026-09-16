@@ -140,14 +140,17 @@ export const Header = () => {
             <LanguageSwitcher />
             <ThemeToggle />
 
-            {/* ДЕСКТОПНА КНОПКА (ВИПРАВЛЕНО) */}
             <div className="max-[900px]:hidden">
-              <Button variant="outline" size="sm" onClick={handleLoginClick}>
+              <Button
+                variant="outline"
+                size="sm"
+                tone="onDark"
+                onClick={() => setIsLoginNoticeOpen(true)}
+              >
                 {t('common.login')}
               </Button>
             </div>
 
-            {/* МОБІЛЬНИЙ ГАМБУРГЕР */}
             <button
               type="button"
               onClick={() => setIsMenuOpen((prev) => !prev)}
@@ -167,7 +170,6 @@ export const Header = () => {
           </div>
         </div>
 
-        {/* МОБІЛЬНЕ МЕНЮ */}
         <div
           id="mobile-navigation"
           className={`
@@ -198,7 +200,6 @@ export const Header = () => {
               ))}
             </nav>
 
-            {/* МОБІЛЬНА КНОПКА */}
             <Button
               variant="outline"
               size="sm"

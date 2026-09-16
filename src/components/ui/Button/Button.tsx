@@ -3,14 +3,15 @@ import { LoaderCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'ghost';
-
 type ButtonSize = 'sm' | 'md' | 'lg';
+type ButtonTone = 'default' | 'onDark';
 
 export type ButtonProps = {
   children: ReactNode;
 
   variant?: ButtonVariant;
   size?: ButtonSize;
+  tone?: ButtonTone;
 
   to?: string;
 
@@ -28,7 +29,52 @@ export type ButtonProps = {
   onClick?: MouseEventHandler<HTMLButtonElement>;
 };
 
-const variantStyles: Record<ButtonVariant, string> = {
+const defaultVariantStyles: Record<ButtonVariant, string> = {
+  primary: `
+    border
+    border-[var(--color-primary)]
+    bg-[var(--color-primary)]
+    text-[#07110d]
+
+    shadow-[0_10px_30px_rgba(34,204,86,0.16)]
+
+    hover:border-[var(--color-primary-hover)]
+    hover:bg-[var(--color-primary-hover)]
+    hover:shadow-[0_14px_38px_rgba(34,204,86,0.22)]
+  `,
+
+  secondary: `
+    border
+    border-[var(--color-border)]
+    bg-[var(--color-card)]
+    text-[var(--color-text-primary)]
+
+    hover:border-[var(--color-border-strong)]
+    hover:bg-[var(--color-card-hover)]
+  `,
+
+  outline: `
+    border
+    border-[rgba(34,204,86,0.32)]
+    bg-[rgba(34,204,86,0.03)]
+    text-[var(--color-text-primary)]
+
+    hover:border-[var(--color-primary)]
+    hover:bg-[rgba(34,204,86,0.09)]
+  `,
+
+  ghost: `
+    border
+    border-transparent
+    bg-transparent
+    text-[var(--color-text-secondary)]
+
+    hover:bg-[var(--color-card)]
+    hover:text-[var(--color-text-primary)]
+  `,
+};
+
+const onDarkVariantStyles: Record<ButtonVariant, string> = {
   primary: `
     border
     border-[var(--color-primary)]
@@ -55,12 +101,12 @@ const variantStyles: Record<ButtonVariant, string> = {
 
   outline: `
     border
-    border-[rgba(34,204,86,0.32)]
-    bg-[rgba(34,204,86,0.03)]
+    border-[rgba(34,204,86,0.38)]
+    bg-[rgba(34,204,86,0.04)]
     text-white
 
     hover:border-[var(--color-primary)]
-    hover:bg-[rgba(34,204,86,0.09)]
+    hover:bg-[rgba(34,204,86,0.10)]
   `,
 
   ghost: `
@@ -102,6 +148,7 @@ export const Button = ({
 
   variant = 'primary',
   size = 'md',
+  tone = 'default',
 
   to,
 
@@ -117,6 +164,11 @@ export const Button = ({
 
   className = '',
 }: ButtonProps) => {
+  const variantStyles =
+    tone === 'onDark'
+      ? onDarkVariantStyles[variant]
+      : defaultVariantStyles[variant];
+
   const classes = `
     relative
     inline-flex
@@ -138,7 +190,7 @@ export const Button = ({
 
     active:scale-[0.98]
 
-    ${variantStyles[variant]}
+    ${variantStyles}
     ${sizeStyles[size]}
 
     ${fullWidth ? 'w-full' : ''}
@@ -163,7 +215,12 @@ export const Button = ({
 
   if (to) {
     return (
-      <Link to={to} className={classes} aria-disabled={disabled || undefined}>
+      <Link
+        to={to}
+        className={classes}
+        aria-disabled={disabled || undefined}
+        tabIndex={disabled ? -1 : undefined}
+      >
         {content}
       </Link>
     );

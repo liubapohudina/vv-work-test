@@ -48,6 +48,27 @@
       "candidatesFound": "Candidates found: {{count}}",
       "jobsFound": "Jobs found: {{count}}"
     },
+    "employer": {
+      "badge": "For employers",
+      "title": "Looking for employees?",
+      "description": "Find verified candidates quickly and conveniently. VV Work helps your business grow with the right people.",
+      "button": "Find an employee",
+
+      "benefits": {
+        "access": {
+          "title": "Candidate access",
+          "description": "Access a large database of verified candidates"
+        },
+        "fast": {
+          "title": "Fast hiring",
+          "description": "Find the right specialists faster"
+        },
+        "support": {
+          "title": "Full support",
+          "description": "Support at every stage of hiring"
+        }
+      }
+    },
     "partners": {
       "eyebrow": "Trusted companies",
       "title": "Verified partners",
@@ -60,6 +81,46 @@
       "emptyTitle": "No partners found",
       "emptyDescription": "There are currently no partners with open positions in this category.",
       "showAll": "Show all partners"
+    },
+    "about": {
+      "eyebrow": "About VV Work",
+      "titleBefore": "We connect people",
+      "titleAccent": "with opportunities.",
+      "description": "VV Work helps candidates find jobs across Europe and helps companies find the people they need faster. We bring vacancies, verified partners and convenient search together in one place.",
+      "forCandidates": "For candidates",
+      "forBusiness": "For employers",
+
+      "benefits": {
+        "europe": {
+          "title": "Opportunities across Europe",
+          "description": "Jobs and employers from different countries."
+        },
+        "verified": {
+          "title": "Verified partners",
+          "description": "Clear information about companies and vacancies."
+        },
+        "fast": {
+          "title": "Fast search",
+          "description": "Convenient filters help you find what you need faster."
+        },
+        "direct": {
+          "title": "A simple path to contact",
+          "description": "From search to the right employer without unnecessary steps."
+        }
+      },
+
+      "flow": {
+        "ariaLabel": "How VV Work connects candidates and employers",
+        "label": "How it works",
+        "title": "One platform — two sides",
+        "candidates": "Candidates",
+        "candidatesText": "Looking for jobs and new opportunities",
+        "business": "Employers",
+        "businessText": "Looking for the right specialists",
+        "matching": "Finding the right match",
+        "result": "The right people find each other",
+        "resultText": "VV Work shortens the path from search to contact."
+      }
     }
   },
   "countries": {
@@ -79,12 +140,6 @@
     "other": "Other",
     "title": "Popular categories",
     "vacancies": "{{count}} vacancies"
-  },
-  "employer": {
-    "badge": "For employers",
-    "title": "Looking for employees?",
-    "description": "Find verified candidates quickly and conveniently.",
-    "button": "Find an employee"
   },
   "footer": {
     "company": "Company",

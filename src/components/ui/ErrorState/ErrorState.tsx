@@ -19,35 +19,67 @@ export const ErrorState = ({
   return (
     <div
       role="alert"
+      aria-live="assertive"
       className="
-        flex items-center justify-between gap-4
-        rounded-[14px]
-        border border-red-400/20
-        bg-red-400/[0.07]
-        px-4 py-3
+        flex
+        items-center
+        justify-between
+        gap-4
+        rounded-[16px]
+        border
+        border-[color-mix(in_srgb,var(--color-error)_25%,transparent)]
+        bg-[color-mix(in_srgb,var(--color-error)_7%,var(--color-surface))]
+        px-4
+        py-3.5
+
         max-sm:flex-col
-        max-sm:items-start
+        max-sm:items-stretch
+
+        sm:px-5
+        sm:py-4
       "
     >
-      <div className="flex items-center gap-3">
+      <div className="flex min-w-0 items-center gap-3">
         <div
           className="
-            grid h-9 w-9 shrink-0 place-items-center
+            grid
+            h-10
+            w-10
+            shrink-0
+            place-items-center
             rounded-full
-            bg-red-400/10
-            text-red-400
+            bg-[color-mix(in_srgb,var(--color-error)_12%,transparent)]
+            text-[var(--color-error)]
           "
         >
-          <TriangleAlert size={18} aria-hidden="true" />
+          <TriangleAlert size={19} strokeWidth={2} aria-hidden="true" />
         </div>
 
-        <div>
-          <p className="text-[13px] font-semibold text-white">
+        <div className="min-w-0">
+          <p
+            className="
+              text-[13px]
+              font-bold
+              leading-[1.35]
+              text-[var(--color-text-primary)]
+            "
+          >
             {t('common.loadError')}
           </p>
 
           {message && (
-            <p className="mt-0.5 text-[11px] text-white/55">{message}</p>
+            <p
+              className="
+                mt-1
+                text-[11px]
+                font-medium
+                leading-[1.5]
+                text-[var(--color-text-secondary)]
+                sm:text-[12px]
+              "
+            >
+              {message}
+            </p>
           )}
         </div>
       </div>
@@ -59,9 +91,11 @@ export const ErrorState = ({
         loading={isRetrying}
         onClick={onRetry}
         leftIcon={
-          !isRetrying ? <RefreshCw size={15} aria-hidden="true" /> : undefined
+          !isRetrying ? (
+            <RefreshCw size={15} strokeWidth={2} aria-hidden="true" />
+          ) : undefined
         }
-        className="shrink-0"
+        className="shrink-0 max-sm:w-full"
       >
         {t('common.retry')}
       </Button>

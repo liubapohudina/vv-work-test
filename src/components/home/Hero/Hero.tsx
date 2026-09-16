@@ -89,7 +89,10 @@ export const Hero = () => {
               {t('home.hero.description')}
             </p>
 
-            <div className="mt-8 sm:mt-10 min-h-[140px] w-full max-w-[780px] rounded-[24px] border border-white/10 bg-white/[0.03] p-4 backdrop-blur-md flex items-center justify-center">
+            <div
+              id="job-search"
+              className="mt-8 sm:mt-10 min-h-[140px] w-full max-w-[780px] rounded-[24px] border border-white/10 bg-white/[0.03] p-4 backdrop-blur-md flex items-center justify-center"
+            >
               <JobSearch />
             </div>
           </div>
