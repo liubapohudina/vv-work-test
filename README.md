@@ -1,18 +1,16 @@
 # VV Work
 
-VV Work — платформа для пошуку роботи та працівників у Європі.
+VV Work --- платформа для пошуку роботи та працівників у Європі.
 
-Проєкт розробляється як тестове завдання з акцентом на компонентну архітектуру, продуктивність, доступність, типізацію та зрозумілу структуру коду.
+Проєкт розробляється як тестове завдання з акцентом на компонентну
+архітектуру, продуктивність, доступність, типізацію та зрозумілу
+структуру коду.
 
 ---
 
 ## Demo
 
-Production:
-
-```text
-https://vv-work-test-ivory.vercel.app
-```
+Production: https://vv-work-test-ivory.vercel.app
 
 ---
 
@@ -29,7 +27,8 @@ https://vv-work-test-ivory.vercel.app
 - Vitest
 - Testing Library
 
-Без сторонніх UI-кітів та глобальних state-management бібліотек на кшталт Redux або Zustand.
+Без сторонніх UI-кітів та глобальних state-management бібліотек на
+кшталт Redux або Zustand.
 
 ---
 
@@ -124,6 +123,15 @@ src/
 │   └── index.ts
 │
 ├── pages/
+│   └── legal/
+│       └── LegalPage/
+│           ├── index.ts
+│           └── LegalPage.tsx
+│
+├── seo/
+│   ├── index.ts
+│   ├── PageMeta.tsx
+│   └── PageMeta.types.ts
 │
 ├── services/
 │   ├── jobsApi.ts
@@ -151,7 +159,9 @@ src/
 
 ## Architecture
 
-Проєкт побудований за компонентним підходом із розділенням відповідальності між UI, сторінками, даними, сервісами, типами та допоміжною логікою.
+Проєкт побудований за компонентним підходом із розділенням
+відповідальності між UI, сторінками, даними, сервісами, типами та
+допоміжною логікою.
 
 ### Components
 
@@ -174,17 +184,47 @@ components/
 └── ui/
 ```
 
-У `ui` знаходяться універсальні компоненти, які можуть використовуватися в різних частинах застосунку.
+У `ui` знаходяться універсальні компоненти, які можуть використовуватися
+в різних частинах застосунку.
 
 Наприклад:
 
 - Button
-- ThemeToggle
+- ErrorState
 - LanguageSwitcher
 - PageLoader
-- notifications
+- Skeleton
+- ThemeToggle
+- Toast
 
 Компоненти UI не повинні напряму залежати від mock-даних або API layer.
+
+### Legal pages
+
+Юридичні сторінки (Privacy Policy, Cookie Policy, Terms) винесені в
+окремий модуль:
+
+```text
+src/pages/legal/LegalPage
+```
+
+Це дозволяє повторно використовувати одну сторінку-шаблон для всіх
+legal-документів, підставляючи лише відповідний контент.
+
+### SEO
+
+Логіка керування метаданими сторінки (title, description, canonical,
+robots) винесена в окремий модуль:
+
+```text
+src/seo
+├── index.ts
+├── PageMeta.tsx
+└── PageMeta.types.ts
+```
+
+Компонент `PageMeta` підключається на рівні сторінок і відповідає за
+коректні meta-теги для кожної локалізованої версії маршруту.
 
 ---
 
@@ -196,9 +236,11 @@ components/
 src/pages
 ```
 
-Page-компоненти відповідають переважно за композицію сторінки та підключення необхідних секцій.
+Page-компоненти відповідають переважно за композицію сторінки та
+підключення необхідних секцій.
 
-Бізнес-логіка, яку можна винести окремо, не повинна зберігатися безпосередньо у великих page-компонентах.
+Бізнес-логіка, яку можна винести окремо, не повинна зберігатися
+безпосередньо у великих page-компонентах.
 
 ---
 
@@ -219,28 +261,26 @@ src/app/router.tsx
 ```text
 /uk
 /en
-
 /uk/contacts
 /en/contacts
-
 /uk/partners/:slug
 /en/partners/:slug
-
 /uk/privacy-policy
 /en/privacy-policy
-
 /uk/cookie-policy
 /en/cookie-policy
-
 /uk/terms
 /en/terms
 ```
 
-Сторінки завантажуються через React `lazy`, що дозволяє виконувати route-level code splitting та не завантажувати JavaScript усіх сторінок під час першого відкриття застосунку.
+Сторінки завантажуються через React `lazy`, що дозволяє виконувати
+route-level code splitting та не завантажувати JavaScript усіх сторінок
+під час першого відкриття застосунку.
 
 Header та Footer використовуються як спільні layout-компоненти.
 
-Для production deployment SPA routing налаштований таким чином, щоб пряме відкриття вкладених маршрутів не повертало серверний `404`.
+Для production deployment SPA routing налаштований таким чином, щоб
+пряме відкриття вкладених маршрутів не повертало серверний `404`.
 
 ---
 
@@ -273,9 +313,11 @@ en — англійська
 /en
 ```
 
-Це дозволяє відкривати та поширювати посилання на конкретну мовну версію сторінки.
+Це дозволяє відкривати та поширювати посилання на конкретну мовну версію
+сторінки.
 
-Архітектура локалізації побудована так, щоб у майбутньому можна було додавати нові мови без переписування основної логіки застосунку.
+Архітектура локалізації побудована так, щоб у майбутньому можна було
+додавати нові мови без переписування основної логіки застосунку.
 
 ---
 
@@ -298,7 +340,8 @@ data-theme="dark"
 data-theme="light"
 ```
 
-Основні кольори, backgrounds, borders, shadows та інші design tokens визначені через CSS Custom Properties.
+Основні кольори, backgrounds, borders, shadows та інші design tokens
+визначені через CSS Custom Properties.
 
 Наприклад:
 
@@ -314,7 +357,9 @@ data-theme="light"
 
 Це дозволяє змінювати тему без дублювання стилів у React-компонентах.
 
-Hero та елементи Header, які знаходяться поверх темного фонового зображення, використовують постійні контрастні кольори незалежно від глобальної теми.
+Hero та елементи Header, які знаходяться поверх темного фонового
+зображення, використовують постійні контрастні кольори незалежно від
+глобальної теми.
 
 ---
 
@@ -332,7 +377,8 @@ Manrope
 src/assets/fonts/
 ```
 
-Використовуються локальні `woff2` файли, що дозволяє уникнути додаткових запитів до зовнішніх font providers.
+Використовуються локальні `woff2` файли, що дозволяє уникнути додаткових
+запитів до зовнішніх font providers.
 
 ---
 
@@ -362,7 +408,8 @@ src/types
 
 ## API Simulation
 
-Оскільки застосунок не використовує реальний backend, робота API імітується через service layer.
+Оскільки застосунок не використовує реальний backend, робота API
+імітується через service layer.
 
 Сервіси знаходяться в:
 
@@ -388,7 +435,8 @@ partnersApi.ts
 - можливість перевірити error state;
 - можливість перевірити retry logic.
 
-UI не повинен напряму імпортувати mock data там, де використовується API simulation.
+UI не повинен напряму імпортувати mock data там, де використовується API
+simulation.
 
 Замість цього використовується:
 
@@ -402,7 +450,8 @@ mockFetch
 Mock Data
 ```
 
-Такий підхід дозволяє в майбутньому замінити mock layer реальним backend API без значного переписування UI.
+Такий підхід дозволяє в майбутньому замінити mock layer реальним backend
+API без значного переписування UI.
 
 ---
 
@@ -427,7 +476,8 @@ src/hooks/useDebounce.ts
 
 Це дозволяє не виконувати пошук після кожного введеного символу.
 
-Пошук виконується після невеликої паузи після введення користувачем тексту.
+Пошук виконується після невеликої паузи після введення користувачем
+тексту.
 
 ---
 
@@ -461,69 +511,40 @@ any;
 
 ## Testing
 
-Для unit-тестування використовуються:
+Для unit/integration тестування використовуються Vitest, Testing Library
+та jsdom.
 
-- Vitest
-- Testing Library
-- jsdom
+Тести розміщені поруч із логікою, яку вони перевіряють. Основний фокус
+--- не presentation markup, а поведінка застосунку:
 
-Тести знаходяться поруч із логікою, яку вони перевіряють.
+- `useDebounce` --- затримка оновлення значення, cleanup таймера та
+  зміна delay;
+- `usePartnerPage` --- пошук, категорії та одночасна робота фільтрів;
+- `JobSearch` --- запуск пошуку, режими job/employee, error state та
+  retry після невдалого запиту;
+- `ContactForm` --- required/min/max validation, формат
+  телефону/Telegram, success/error submit flow;
+- `mockFetch` --- випадкова затримка та помилка;
+- service layer --- jobs, candidates, partners та contact API.
 
-Наприклад:
+Ключові вимоги тестового завдання покриті окремими тестами:
 
 ```text
-src/hooks/useDebounce.test.ts
-src/utils/validation.test.ts
-
-src/services/mockFetch.test.ts
-src/services/jobsApi.test.ts
-src/services/partnersApi.test.ts
+debounce search  ✓
+form validation  ✓
+retry logic      ✓
 ```
 
----
+Запуск усіх тестів:
 
-### Debounce tests
-
-Тести `useDebounce` перевіряють, що значення не оновлюється одразу після введення та змінюється лише після заданої затримки.
-
-```text
-src/hooks/useDebounce.test.ts
+```bash
+npm run test:run
 ```
 
----
+Запуск coverage:
 
-### Validation tests
-
-Validation tests перевіряють правила валідації форм.
-
-Залежно від форми можуть перевірятися:
-
-- required fields;
-- мінімальна довжина;
-- максимальна довжина;
-- формат контактних даних;
-- валідні та невалідні значення.
-
-```text
-src/utils/validation.test.ts
-```
-
----
-
-### API tests
-
-Service tests перевіряють поведінку mock API.
-
-Зокрема:
-
-- успішне отримання даних;
-- API error;
-- asynchronous responses;
-- повторний запит після помилки;
-- retry logic.
-
-```text
-src/services/*.test.ts
+```bash
+npm run test:coverage
 ```
 
 ---
@@ -542,7 +563,8 @@ npm run test:coverage
 60%+ coverage application logic
 ```
 
-Основний фокус покриття — логіка застосунку, а не прості presentation components.
+Основний фокус покриття --- логіка застосунку, а не прості presentation
+components.
 
 Особлива увага приділяється:
 
@@ -559,29 +581,35 @@ filtering/search logic
 
 ## Accessibility
 
-При розробці враховуються базові accessibility requirements.
-
-Зокрема:
+У застосунку враховані базові accessibility-вимоги:
 
 - semantic HTML;
 - keyboard navigation;
 - focus-visible states;
+- Skip to content;
 - доступні button controls;
-- `aria-label`;
-- `aria-expanded`;
-- `aria-selected`;
-- правильні label для form controls;
-- доступні повідомлення про помилки;
-- достатній contrast.
+- `aria-label`, `aria-expanded`, `aria-selected`;
+- коректні label для form controls;
+- доступні inline-повідомлення про помилки;
+- достатній color contrast.
 
-Перед фінальною здачею застосунок перевіряється через axe.
+Фінальна автоматична перевірка виконана через axe DevTools на production
+deployment.
 
-Ціль:
+![axe accessibility audit](./docs/axe.png)
+
+Результат:
 
 ```text
-0 critical accessibility issues
-0 serious accessibility issues
+Total issues: 0
+Critical: 0
+Serious: 0
+Moderate: 0
+Minor: 0
 ```
+
+Таким чином, вимога тестового завдання щодо відсутності critical/serious
+axe-помилок виконана.
 
 ---
 
@@ -605,7 +633,8 @@ Lighthouse Performance >= 90
 - оптимізація великих background images;
 - memoization там, де вона має практичну користь.
 
-Lighthouse потрібно запускати для production build, а не Vite development server.
+Lighthouse потрібно запускати для production build, а не Vite
+development server.
 
 ```bash
 npm run build
@@ -618,28 +647,21 @@ npm run preview
 
 ## Lighthouse
 
-Фінальний Lighthouse screenshot буде доданий після завершення оптимізації застосунку.
+Фінальна перевірка виконана на production deployment у Vercel для Home
+Page.
 
-Запланований файл:
-
-```text
-docs/lighthouse.png
-```
-
-Після додавання:
-
-```md
 ![Lighthouse report](./docs/lighthouse.png)
-```
 
-Final results:
+Фінальні результати:
 
 ```text
-Performance: TBD
-Accessibility: TBD
-Best Practices: TBD
-SEO: TBD
+Performance: 99
+Accessibility: 100
+Best Practices: 96
+SEO: 100
 ```
+
+Вимога тестового завдання `Lighthouse Performance >= 90` виконана.
 
 ---
 
@@ -663,8 +685,6 @@ SEO: TBD
 - зберігати мову після refresh;
 - масштабувати routing на нові мови.
 
----
-
 ### API abstraction instead of direct mock imports
 
 UI не повинен напряму працювати з:
@@ -686,9 +706,8 @@ Mock API
 Data
 ```
 
-Завдяки цьому mock API у майбутньому можна замінити справжнім HTTP API без значних змін у компонентах.
-
----
+Завдяки цьому mock API у майбутньому можна замінити справжнім HTTP API
+без значних змін у компонентах.
 
 ### No global state library
 
@@ -701,9 +720,8 @@ Redux або Zustand не використовуються.
 - React Router;
 - i18next.
 
-Додавання окремого global state manager на цьому етапі створило б зайву складність.
-
----
+Додавання окремого global state manager на цьому етапі створило б зайву
+складність.
 
 ### Reusable UI components
 
@@ -713,10 +731,12 @@ Redux або Zustand не використовуються.
 
 ```text
 Button
-ThemeToggle
+ErrorState
 LanguageSwitcher
 PageLoader
-notifications
+Skeleton
+ThemeToggle
+Toast
 ```
 
 Це дозволяє:
@@ -726,15 +746,73 @@ notifications
 - спрощувати майбутні зміни UI;
 - тримати page components компактними.
 
----
-
 ### Hero independent from global theme
 
 Hero використовує темне фонове зображення.
 
-Через це основний текст Hero та Header поверх Hero залишається світлим навіть при активній light theme.
+Через це основний текст Hero та Header поверх Hero залишається світлим
+навіть при активній light theme.
 
-Інакше глобальні light-theme tokens могли б зробити текст недостатньо контрастним відносно background image.
+Інакше глобальні light-theme tokens могли б зробити текст недостатньо
+контрастним відносно background image.
+
+---
+
+## Мої рішення
+
+1. **Головна сторінка побудована навколо двох сценаріїв --- пошуку
+   роботи та пошуку працівників.** Hero одразу пояснює цінність VV
+   Work, а пошук і популярні категорії знаходяться у першому екрані,
+   щоб скоротити шлях користувача до релевантного результату.
+
+2. **Для стану використано локальний React state та спеціалізовані
+   hooks замість Redux/Zustand.** Поточний масштаб не потребує
+   глобального store: пошукові фільтри, UI-стани та дані мають локальну
+   область відповідальності. Це зменшує кількість залежностей і спрощує
+   підтримку.
+
+3. **Пошук і фільтрація винесені в окрему логіку.** Ручний
+   `useDebounce` не запускає пошук після кожного символу, а `useMemo` у
+   Partner Page обчислює partner jobs, доступні категорії та
+   відфільтрований список лише при зміні відповідних залежностей. Пошук
+   і category filter працюють одночасно.
+
+4. **Mock API відділений від UI через service layer.** Компоненти
+   працюють із `jobsApi`, `partnersApi`, `candidatesApi` та
+   `contactApi`, а затримка й випадкові помилки централізовані в
+   `mockFetch`. Це дозволяє надалі замінити mock backend реальним API
+   без переписування UI.
+
+5. **Доступність і продуктивність перевірялися як частина реалізації, а
+   не лише наприкінці.** Додані semantic markup, keyboard/focus states,
+   Skip to content, доступні form errors, contrast fixes, lazy-loaded
+   routes, локальні WOFF2-шрифти та WebP-зображення. Фінальний
+   результат: Lighthouse Performance 99 та axe без accessibility
+   issues.
+
+---
+
+## Відхилення та розширення брифу
+
+Базові вимоги брифу збережені, але MVP свідомо розширено в кількох
+місцях:
+
+- **Локалізація UK/EN і language-prefixed routes.** Замість однієї
+  мовної версії використані `/uk` та `/en`, щоб архітектура була
+  готова до європейського продукту та дозволяла поширювати прямі
+  локалізовані посилання.
+- **Dark / Light theme.** Тема не була обов'язковою вимогою, але
+  додана як невелике UX-покращення. Design tokens винесені в CSS
+  Custom Properties, тому тема не дублює стилі компонентів.
+- **Legal pages і cookie banner.** Додані Privacy Policy, Cookie
+  Policy та Terms, оскільки вони природно доповнюють footer і роблять
+  MVP ближчим до реального продукту.
+- **Пошук кандидатів на Home.** Окрім сценарію вакансій, Hero
+  підтримує напрям «Знайти працівника», щоб обидві основні аудиторії
+  VV Work мали зрозумілу точку входу.
+- **SEO та SPA deployment support.** Додані page metadata,
+  canonical/robots/sitemap та Vercel SPA fallback для коректного
+  прямого відкриття локалізованих і динамічних маршрутів.
 
 ---
 
@@ -742,7 +820,8 @@ Hero використовує темне фонове зображення.
 
 Production deployment виконується через Vercel.
 
-Оскільки застосунок використовує client-side routing, production hosting налаштований для SPA fallback.
+Оскільки застосунок використовує client-side routing, production hosting
+налаштований для SPA fallback.
 
 Це дозволяє напряму відкривати маршрути на кшталт:
 
@@ -759,72 +838,47 @@ Production deployment виконується через Vercel.
 
 ## Current Status
 
-Проєкт знаходиться в активній розробці.
+MVP для тестового завдання завершений та задеплоєний.
 
-На поточному етапі реалізована або підготовлена базова архітектура для:
+Реалізовано:
 
-- Vite + React + TypeScript;
-- Tailwind CSS;
-- routing;
-- lazy-loaded pages;
-- localized routes;
-- Ukrainian / English localization;
-- dark / light themes;
-- responsive Header;
-- mobile navigation;
-- reusable UI components;
-- Hero section;
-- mock data;
-- domain types;
-- mock API layer;
-- Vitest setup;
-- validation tests;
-- debounce tests;
-- API tests.
+- Home Page з Hero, пошуком, популярними категоріями, блоком партнерів
+  і CTA для роботодавців;
+- динамічну Partner Page `/partners/:slug`;
+- Contacts Page з клієнтською валідацією та optimistic submit flow;
+- shared Header / Footer;
+- responsive layout для desktop, tablet і mobile;
+- українську та англійську локалізацію;
+- dark / light theme;
+- mock API із затримкою 300--800 ms та випадковою помилкою;
+- skeleton/loading, error та retry states;
+- route-level lazy loading;
+- legal pages, cookie banner та базові SEO/meta налаштування;
+- unit/integration tests для ключової логіки;
+- production deployment через Vercel;
+- Lighthouse Performance 99;
+- axe audit: 0 critical / 0 serious issues.
 
 ---
 
-## Next Steps
-
-Наступні етапи розробки:
-
-- vacancy search component;
-- debounce search integration;
-- category filters;
-- vacancies list;
-- async loading state;
-- skeleton loaders;
-- API error state;
-- retry logic;
-- partner section;
-- partner details page;
-- contacts form;
-- form validation;
-- privacy / cookies / terms content;
-- responsive polishing;
-- accessibility audit;
-- unit test coverage >= 60%;
-- production Lighthouse optimization;
-- final Lighthouse screenshot.
-
----
-
-## Quality Goals
-
-Перед фінальною здачею проєкт повинен відповідати таким вимогам:
+## Final Quality Check
 
 ```text
-TypeScript strict mode
-No any in application code
-Component-based architecture
-React Router
-Shared Header / Footer
-Unit tests for debounce
-Unit tests for validation
-Unit tests for retry logic
->= 60% logic coverage
-Lighthouse Performance >= 90
-No critical/serious axe accessibility errors
+TypeScript strict mode                         ✓
+No any in application code                     ✓
+Component-based architecture                   ✓
+React Router + shared Header / Footer          ✓
+Manual debounce                                ✓
+Combined vacancy search + category filtering   ✓
+Mock API delay/error simulation                ✓
+Skeleton / error / retry states                ✓
+Contact form validation                        ✓
+Optimistic contact submit                      ✓
+Tests: debounce / validation / retry           ✓
+>= 60% logic coverage                          ✓
+Lighthouse Performance >= 90                   ✓  (99)
+axe critical/serious issues                    ✓  (0 / 0)
+Vercel production deployment                   ✓
 ```
 
 ---
