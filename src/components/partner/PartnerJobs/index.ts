@@ -1,0 +1,1 @@
+export { PartnerJobs } from './PartnerJobs';

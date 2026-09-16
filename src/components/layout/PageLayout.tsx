@@ -7,6 +7,7 @@ import { Header } from '@/components/Header';
 import { PageLoader } from '@/components/ui/PageLoader';
 import { CookieBanner } from '@/components/CookieBanner';
 import { ScrollToHash } from './ScrollToHash';
+import { ScrollToTop } from './ScrollToTop';
 
 import { DEFAULT_LANGUAGE, isSupportedLanguage } from '@/i18n/config';
 
@@ -35,6 +36,7 @@ export const PageLayout = () => {
 
   return (
     <>
+      <ScrollToTop />
       <ScrollToHash />
       <Header />
       <main>

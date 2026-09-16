@@ -258,5 +258,62 @@
         }
       }
     }
+  },
+  "partnerPage": {
+    "verified": "Verified employer",
+    "employees": "Employees",
+    "founded": "Founded",
+    "rating": "Rating",
+
+    "about": "About",
+    "jobs": "Vacancies",
+    "reviews": "Reviews",
+
+    "searchJobs": "Search vacancies",
+    "searchPlaceholder": "Position, city or country...",
+
+    "category": "Category",
+    "allCategories": "All categories",
+
+    "fullTime": "Full-time",
+
+    "salaryFrom": "from",
+
+    "addFavorite": "Add to favorites",
+    "details": "Details",
+
+    "noJobs": "No vacancies found",
+    "noJobsDescription": "Try changing your search query or selecting another category.",
+    "tabs": "Company page navigation",
+    "aboutCompany": "About the company",
+    "reviewsComingSoon": "Reviews are coming soon",
+    "reviewsComingSoonDescription": "We are working on an employer review system. This feature will be available later.",
+    "featureInDevelopment": "This feature is in development and will be available later"
+  },
+  "jobs": {
+    "driverB": {
+      "title": "Category B Driver",
+      "description": "Driver position at an international transport company."
+    },
+    "productionWorker": {
+      "title": "Production Worker",
+      "description": "Work at a modern manufacturing facility."
+    },
+    "builder": {
+      "title": "Construction Worker",
+      "description": "Construction work on company projects."
+    },
+    "frontendDeveloper": {
+      "title": "Frontend Developer",
+      "description": "Web application development with React and TypeScript."
+    },
+    "hotelWorker": {
+      "title": "Hotel Worker",
+      "description": "Work at an international hotel group."
+    },
+    "warehouseWorker": {
+      "title": "Warehouse Worker",
+      "description": "Picking and packing customer orders."
+    }
   }
 }

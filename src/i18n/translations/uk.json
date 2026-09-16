@@ -260,5 +260,62 @@
         }
       }
     }
+  },
+  "partnerPage": {
+    "verified": "Перевірений роботодавець",
+    "employees": "Працівників",
+    "founded": "Рік заснування",
+    "rating": "Рейтинг",
+
+    "about": "Про компанію",
+    "jobs": "Вакансії",
+    "reviews": "Відгуки",
+
+    "searchJobs": "Пошук вакансій",
+    "searchPlaceholder": "Посада, місто або країна...",
+
+    "category": "Категорія",
+    "allCategories": "Усі категорії",
+
+    "fullTime": "Повна зайнятість",
+
+    "salaryFrom": "від",
+
+    "addFavorite": "Додати в обране",
+    "details": "Детальніше",
+
+    "noJobs": "Вакансій не знайдено",
+    "noJobsDescription": "Спробуйте змінити пошуковий запит або вибрати іншу категорію.",
+    "tabs": "Навігація сторінки компанії",
+    "aboutCompany": "Про компанію",
+    "reviewsComingSoon": "Відгуки скоро з'являться",
+    "reviewsComingSoonDescription": "Ми працюємо над системою відгуків про роботодавців. Ця функція буде доступна пізніше.",
+    "featureInDevelopment": "Функція в розробці та буде доступна пізніше"
+  },
+  "jobs": {
+    "driverB": {
+      "title": "Водій категорії B",
+      "description": "Робота водієм у міжнародній транспортній компанії."
+    },
+    "productionWorker": {
+      "title": "Працівник на виробництво",
+      "description": "Робота на сучасному виробництві."
+    },
+    "builder": {
+      "title": "Будівельник",
+      "description": "Будівельні роботи на обʼєктах компанії."
+    },
+    "frontendDeveloper": {
+      "title": "Frontend Developer",
+      "description": "Розробка вебзастосунків на React та TypeScript."
+    },
+    "hotelWorker": {
+      "title": "Працівник готелю",
+      "description": "Робота у міжнародній мережі готелів."
+    },
+    "warehouseWorker": {
+      "title": "Працівник складу",
+      "description": "Комплектація та пакування замовлень."
+    }
   }
 }

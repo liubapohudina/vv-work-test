@@ -1,0 +1,1 @@
+export { PartnerJobCard } from './PartnerJobCard';

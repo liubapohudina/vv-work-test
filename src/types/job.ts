@@ -9,20 +9,22 @@ export type JobCategory =
 
 export type Job = {
   id: string;
-  title: string;
+  partnerId: string;
+
+  titleKey: string;
+  descriptionKey: string;
+
   company: string;
   country: string;
   city: string;
-  partnerId: string;
   category: JobCategory;
+
   salary: {
     from: number;
     to: number;
     currency: 'EUR';
   };
-  description: string;
 };
-
 export type JobSearchParams = {
   query?: string;
   country?: string;

@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 
 import {
-  sendContactMessage,
+  // sendContactMessage,
   type ContactFormData,
 } from '@/services/contactApi';
 
@@ -33,14 +33,15 @@ export const ContactForm = () => {
 
   const message = watch('message');
 
-  const onSubmit = async (data: ContactFormData) => {
+  const onSubmit = async (_data: ContactFormData) => {
     setSubmitError(false);
 
-    // optimistic UI
+    // Temporary optimistic UI until API is connected
     setIsSuccess(true);
 
     try {
-      await sendContactMessage(data);
+      // await sendContactMessage(_data);
+
       reset();
     } catch {
       setIsSuccess(false);
