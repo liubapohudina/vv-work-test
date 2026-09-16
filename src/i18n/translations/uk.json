@@ -13,7 +13,8 @@
     "loadError": "Не вдалося завантажити дані",
     "retry": "Спробувати ще раз",
     "mainNavigation": "Головна навігація",
-    "mobileNavigation": "Мобільна навігація"
+    "mobileNavigation": "Мобільна навігація",
+    "skipToContent": "Перейти до основного вмісту"
   },
   "cookieBanner": {
     "ariaLabel": "Налаштування cookies",

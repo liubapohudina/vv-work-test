@@ -34,6 +34,8 @@ export const Hero = () => {
       <img
         src={heroBg}
         alt=""
+        width={1920}
+        height={790}
         aria-hidden="true"
         fetchPriority="high"
         className="absolute inset-0 h-full w-full object-cover object-center"

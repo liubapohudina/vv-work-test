@@ -13,7 +13,8 @@
     "loadError": "Failed to load data",
     "retry": "Try again",
     "mainNavigation": "Main navigation",
-    "mobileNavigation": "Mobile navigation"
+    "mobileNavigation": "Mobile navigation",
+    "skipToContent": "Skip to main content"
   },
   "cookieBanner": {
     "ariaLabel": "Cookie settings",
