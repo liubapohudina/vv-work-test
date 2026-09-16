@@ -47,6 +47,19 @@
       "noResults": "No results found for your search.",
       "candidatesFound": "Candidates found: {{count}}",
       "jobsFound": "Jobs found: {{count}}"
+    },
+    "partners": {
+      "eyebrow": "Trusted companies",
+      "title": "Verified partners",
+      "description": "Companies looking for employees and offering opportunities across Europe.",
+      "filteredTitle": "Partners: {{category}}",
+      "filteredDescription": "Companies found: {{count}}",
+      "verified": "Verified",
+      "jobsCount": "Jobs: {{count}}",
+      "error": "Failed to load partners. Please try again.",
+      "emptyTitle": "No partners found",
+      "emptyDescription": "There are currently no partners with open positions in this category.",
+      "showAll": "Show all partners"
     }
   },
   "countries": {
@@ -83,5 +96,25 @@
     "rights": "All rights reserved."
   },
   "loadError": "Failed to load data.",
-  "retry": "Try again"
+  "retry": "Try again",
+  "partners": {
+    "euroTransport": {
+      "description": "An international transport company operating across Europe."
+    },
+    "techProduction": {
+      "description": "A European manufacturing company with modern production facilities."
+    },
+    "buildEurope": {
+      "description": "A construction company delivering projects across Europe."
+    },
+    "digitalEurope": {
+      "description": "An IT company creating digital products for the European market."
+    },
+    "hotelGroup": {
+      "description": "An international hotel group offering job opportunities across Europe."
+    },
+    "logisticsGroup": {
+      "description": "A logistics company providing warehousing and transportation services."
+    }
+  }
 }

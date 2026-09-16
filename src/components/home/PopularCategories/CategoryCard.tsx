@@ -152,7 +152,7 @@ export const CategoryCard = ({
             leading-[1.25]
             tracking-[-0.02em]
             text-[var(--color-text-primary)]
-            sm:text-[16px]
+            sm:text-[18px]
           "
         >
           {t(`categories.${category}`)}

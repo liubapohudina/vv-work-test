@@ -19,11 +19,26 @@ export const Header = () => {
   const [isLoginNoticeOpen, setIsLoginNoticeOpen] = useState(false);
 
   const navItems = [
-    { to: `/${lang}`, label: t('common.findJob') },
-    { to: `/${lang}#employees`, label: t('common.findEmployee') },
-    { to: `/${lang}#about`, label: t('common.about') },
-    { to: `/${lang}#partners`, label: t('common.partners') },
-    { to: `/${lang}/contacts`, label: t('common.contacts') },
+    {
+      to: `/${lang}`,
+      label: t('common.findJob'),
+    },
+    {
+      to: `/${lang}#employees`,
+      label: t('common.findEmployee'),
+    },
+    {
+      to: `/${lang}#about`,
+      label: t('common.about'),
+    },
+    {
+      to: `/${lang}#partners`,
+      label: t('common.partners'),
+    },
+    {
+      to: `/${lang}/contacts`,
+      label: t('common.contacts'),
+    },
   ];
 
   useEffect(() => {
@@ -97,7 +112,13 @@ export const Header = () => {
             onClick={closeMenu}
             className="flex shrink-0 items-center gap-2 font-bold text-white"
           >
-            <img src={logo} alt="logo" w-76 h-25 />
+            <img
+              src={logo}
+              alt="VV Work"
+              width={76}
+              height={28}
+              className="h-[28px] w-[76px] object-contain"
+            />
           </Link>
 
           <nav
