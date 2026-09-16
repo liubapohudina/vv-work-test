@@ -14,8 +14,8 @@ const matchesQuery = (job: Job, query: string) => {
 
   const normalizedQuery = normalize(query);
 
-  return [job.title, job.company, job.city, job.country, job.category].some(
-    (value) => normalize(value).includes(normalizedQuery),
+  return [job.company, job.city, job.country, job.category].some((value) =>
+    normalize(value).includes(normalizedQuery),
   );
 };
 
