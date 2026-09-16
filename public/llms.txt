@@ -2,31 +2,38 @@
 
 > VV Work is a platform for finding jobs, employees, and verified employers across Europe.
 
-VV Work helps candidates discover job opportunities across European countries and helps employers connect with potential employees.
+VV Work helps candidates find job opportunities across Europe and helps employers connect with potential employees.
 
 ## Main pages
 
-- Home: https://vv-work-test-ivory.vercel.app/en
-- Ukrainian version: https://vv-work-test-ivory.vercel.app/uk
-- Contacts: https://vv-work-test-ivory.vercel.app/en/contacts
-- Privacy Policy: https://vv-work-test-ivory.vercel.app/en/privacy-policy
-- Cookie Policy: https://vv-work-test-ivory.vercel.app/en/cookie-policy
-- Terms of Use: https://vv-work-test-ivory.vercel.app/en/terms
+- [English homepage](https://vv-work-test-ivory.vercel.app/en)
+- [Ukrainian homepage](https://vv-work-test-ivory.vercel.app/uk)
+- [Contacts](https://vv-work-test-ivory.vercel.app/en/contacts)
+- [Privacy Policy](https://vv-work-test-ivory.vercel.app/en/privacy-policy)
+- [Cookie Policy](https://vv-work-test-ivory.vercel.app/en/cookie-policy)
+- [Terms of Use](https://vv-work-test-ivory.vercel.app/en/terms)
+
+## Partners
+
+- [Euro Transport](https://vv-work-test-ivory.vercel.app/en/partners/euro-transport)
+- [Tech Production](https://vv-work-test-ivory.vercel.app/en/partners/tech-production)
+- [Build Europe](https://vv-work-test-ivory.vercel.app/en/partners/build-europe)
+- [Digital Europe](https://vv-work-test-ivory.vercel.app/en/partners/digital-europe)
+- [Hotel Group](https://vv-work-test-ivory.vercel.app/en/partners/hotel-group)
+- [Logistics Group](https://vv-work-test-ivory.vercel.app/en/partners/logistics-group)
 
 ## Main content
 
-The website provides:
+VV Work provides information about:
 
 - Job vacancies across Europe
-- Job search by country and category
-- Information about verified employers
-- Partner and employer profiles
+- Job opportunities by country and category
+- Verified employers and partners
+- Employer profiles and available vacancies
 - Recruitment opportunities for employers
-- Information for candidates looking for work in Europe
+- Job opportunities for candidates
 
 ## Languages
 
-VV Work is available in:
-
-- English: https://vv-work-test-ivory.vercel.app/en
-- Ukrainian: https://vv-work-test-ivory.vercel.app/uk
+- [English version](https://vv-work-test-ivory.vercel.app/en)
+- [Ukrainian version](https://vv-work-test-ivory.vercel.app/uk)
