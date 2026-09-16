@@ -25,7 +25,7 @@ export const mockFetch = async <T>(
   const delay = getRandomDelay(minDelay, maxDelay);
 
   await new Promise<void>((resolve) => {
-    window.setTimeout(resolve, delay);
+    setTimeout(resolve, delay);
   });
 
   if (Math.random() < errorRate) {
