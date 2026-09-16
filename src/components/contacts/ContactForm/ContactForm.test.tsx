@@ -1,6 +1,8 @@
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
+import { sendContactMessage } from '@/services/contactApi';
+
 import { ContactForm } from './ContactForm';
 
 vi.mock('react-i18next', () => ({
@@ -9,9 +11,19 @@ vi.mock('react-i18next', () => ({
   }),
 }));
 
+vi.mock('@/services/contactApi', () => ({
+  sendContactMessage: vi.fn(),
+}));
+
+const mockedSendContactMessage = vi.mocked(sendContactMessage);
+
 describe('ContactForm', () => {
   beforeEach(() => {
     vi.clearAllMocks();
+
+    mockedSendContactMessage.mockResolvedValue({
+      success: true,
+    });
   });
 
   it('renders contact form', () => {
@@ -46,6 +58,8 @@ describe('ContactForm', () => {
     expect(
       await screen.findByText('contacts.validation.contactRequired'),
     ).toBeInTheDocument();
+
+    expect(mockedSendContactMessage).not.toHaveBeenCalled();
   });
 
   it('shows validation error when name is too short', async () => {
@@ -190,6 +204,14 @@ describe('ContactForm', () => {
     expect(
       screen.getByText('contacts.form.successDescription'),
     ).toBeInTheDocument();
+
+    expect(mockedSendContactMessage).toHaveBeenCalledTimes(1);
+
+    expect(mockedSendContactMessage).toHaveBeenCalledWith({
+      name: 'Anna',
+      contact: '+48 123 456 789',
+      message: 'Hello!',
+    });
   });
 
   it('does not submit when contact is invalid', async () => {
@@ -220,5 +242,47 @@ describe('ContactForm', () => {
     expect(
       screen.queryByText('contacts.form.successTitle'),
     ).not.toBeInTheDocument();
+
+    expect(mockedSendContactMessage).not.toHaveBeenCalled();
+  });
+
+  it('shows submit error when request fails', async () => {
+    mockedSendContactMessage.mockRejectedValueOnce(new Error('Request failed'));
+
+    render(<ContactForm />);
+
+    fireEvent.change(screen.getByLabelText('contacts.form.name'), {
+      target: {
+        value: 'Anna',
+      },
+    });
+
+    fireEvent.change(screen.getByLabelText('contacts.form.contact'), {
+      target: {
+        value: '+48 123 456 789',
+      },
+    });
+
+    fireEvent.click(
+      screen.getByRole('button', {
+        name: 'contacts.form.submit',
+      }),
+    );
+
+    expect(
+      await screen.findByText('contacts.form.submitError'),
+    ).toBeInTheDocument();
+
+    expect(
+      screen.queryByText('contacts.form.successTitle'),
+    ).not.toBeInTheDocument();
+
+    expect(mockedSendContactMessage).toHaveBeenCalledTimes(1);
+
+    expect(mockedSendContactMessage).toHaveBeenCalledWith({
+      name: 'Anna',
+      contact: '+48 123 456 789',
+      message: '',
+    });
   });
 });

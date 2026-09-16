@@ -10,10 +10,10 @@ export type ContactResponse = {
   success: true;
 };
 
-export const sendContactMessage =
-  () // data: ContactFormData, use later, when will be real api
-  : Promise<ContactResponse> => {
-    return mockFetch<ContactResponse>({
-      success: true,
-    });
-  };
+export const sendContactMessage = (
+  _data: ContactFormData,
+): Promise<ContactResponse> => {
+  return mockFetch<ContactResponse>({
+    success: true,
+  });
+};

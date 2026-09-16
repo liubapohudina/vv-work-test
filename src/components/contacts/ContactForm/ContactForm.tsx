@@ -2,9 +2,8 @@ import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
-
 import {
-  // sendContactMessage,
+  sendContactMessage,
   type ContactFormData,
 } from '@/services/contactApi';
 
@@ -33,15 +32,14 @@ export const ContactForm = () => {
 
   const message = watch('message');
 
-  const onSubmit = async (_data: ContactFormData) => {
+  const onSubmit = async (data: ContactFormData) => {
     setSubmitError(false);
 
-    // Temporary optimistic UI until API is connected
+    // Optimistic UI
     setIsSuccess(true);
 
     try {
-      // await sendContactMessage(_data);
-
+      await sendContactMessage(data);
       reset();
     } catch {
       setIsSuccess(false);
