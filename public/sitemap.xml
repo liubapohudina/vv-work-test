@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml"
+>
+  <!-- Home -->
+  <url>
+    <loc>https://vv-work-test-ivory.vercel.app/uk</loc>
+    <xhtml:link
+      rel="alternate"
+      hreflang="uk"
+      href="https://vv-work-test-ivory.vercel.app/uk"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://vv-work-test-ivory.vercel.app/en"
+    />
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://vv-work-test-ivory.vercel.app/en</loc>
+    <xhtml:link
+      rel="alternate"
+      hreflang="uk"
+      href="https://vv-work-test-ivory.vercel.app/uk"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://vv-work-test-ivory.vercel.app/en"
+    />
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Contacts -->
+  <url>
+    <loc>https://vv-work-test-ivory.vercel.app/uk/contacts</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://vv-work-test-ivory.vercel.app/en/contacts</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Privacy Policy -->
+  <url>
+    <loc>https://vv-work-test-ivory.vercel.app/uk/privacy-policy</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://vv-work-test-ivory.vercel.app/en/privacy-policy</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- Cookie Policy -->
+  <url>
+    <loc>https://vv-work-test-ivory.vercel.app/uk/cookie-policy</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://vv-work-test-ivory.vercel.app/en/cookie-policy</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- Terms -->
+  <url>
+    <loc>https://vv-work-test-ivory.vercel.app/uk/terms</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://vv-work-test-ivory.vercel.app/en/terms</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- Euro Transport -->
+  <url>
+    <loc>https://vv-work-test-ivory.vercel.app/uk/partners/euro-transport</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://vv-work-test-ivory.vercel.app/en/partners/euro-transport</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Tech Production -->
+  <url>
+    <loc>https://vv-work-test-ivory.vercel.app/uk/partners/tech-production</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://vv-work-test-ivory.vercel.app/en/partners/tech-production</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Build Europe -->
+  <url>
+    <loc>https://vv-work-test-ivory.vercel.app/uk/partners/build-europe</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://vv-work-test-ivory.vercel.app/en/partners/build-europe</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Digital Europe -->
+  <url>
+    <loc>https://vv-work-test-ivory.vercel.app/uk/partners/digital-europe</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://vv-work-test-ivory.vercel.app/en/partners/digital-europe</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Hotel Group -->
+  <url>
+    <loc>https://vv-work-test-ivory.vercel.app/uk/partners/hotel-group</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://vv-work-test-ivory.vercel.app/en/partners/hotel-group</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Logistics Group -->
+  <url>
+    <loc>https://vv-work-test-ivory.vercel.app/uk/partners/logistics-group</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://vv-work-test-ivory.vercel.app/en/partners/logistics-group</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+</urlset>

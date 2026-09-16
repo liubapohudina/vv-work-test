@@ -1,0 +1,32 @@
+# VV Work
+
+> VV Work is a platform for finding jobs, employees, and verified employers across Europe.
+
+VV Work helps candidates discover job opportunities across European countries and helps employers connect with potential employees.
+
+## Main pages
+
+- Home: https://vv-work-test-ivory.vercel.app/en
+- Ukrainian version: https://vv-work-test-ivory.vercel.app/uk
+- Contacts: https://vv-work-test-ivory.vercel.app/en/contacts
+- Privacy Policy: https://vv-work-test-ivory.vercel.app/en/privacy-policy
+- Cookie Policy: https://vv-work-test-ivory.vercel.app/en/cookie-policy
+- Terms of Use: https://vv-work-test-ivory.vercel.app/en/terms
+
+## Main content
+
+The website provides:
+
+- Job vacancies across Europe
+- Job search by country and category
+- Information about verified employers
+- Partner and employer profiles
+- Recruitment opportunities for employers
+- Information for candidates looking for work in Europe
+
+## Languages
+
+VV Work is available in:
+
+- English: https://vv-work-test-ivory.vercel.app/en
+- Ukrainian: https://vv-work-test-ivory.vercel.app/uk
