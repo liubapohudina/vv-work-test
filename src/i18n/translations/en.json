@@ -189,6 +189,22 @@
     "home": {
       "title": "Jobs in Europe — Find Jobs and Employees | VV Work",
       "description": "VV Work is a platform for finding jobs and employees across Europe. Discover current vacancies, verified employers and candidates in European countries."
+    },
+    "privacy": {
+      "title": "Privacy Policy | VV Work",
+      "description": "Learn how VV Work processes and protects information provided by platform users."
+    },
+    "cookies": {
+      "title": "Cookie Policy | VV Work",
+      "description": "Information about cookies and cookie management on the VV Work platform."
+    },
+    "terms": {
+      "title": "Terms of Use | VV Work",
+      "description": "The main terms and rules for using the VV Work platform."
+    },
+    "notFound": {
+      "title": "Page Not Found | VV Work",
+      "description": "The requested VV Work page could not be found."
     }
   },
   "contacts": {
@@ -315,5 +331,107 @@
       "title": "Warehouse Worker",
       "description": "Picking and packing customer orders."
     }
+  },
+  "legal": {
+    "lastUpdated": "Last updated: September 16, 2026"
+  },
+
+  "privacy": {
+    "eyebrow": "Legal information",
+    "title": "Privacy Policy",
+    "description": "This policy explains how VV Work may collect, use and protect information when you use the platform.",
+    "sections": {
+      "collection": {
+        "title": "1. Information we collect",
+        "text": "We may receive information that you voluntarily provide through forms on the website, including your name, contact details and message content."
+      },
+      "usage": {
+        "title": "2. How we use information",
+        "text": "Information you provide may be used to process requests, communicate with users, improve the platform and provide its functionality."
+      },
+      "storage": {
+        "title": "3. Data storage and protection",
+        "text": "We aim to use appropriate technical and organizational measures to protect information against unauthorized access, loss or misuse."
+      },
+      "sharing": {
+        "title": "4. Information sharing",
+        "text": "We do not sell users’ personal data. Information may be shared with service providers when necessary to operate the platform or when required by law."
+      },
+      "rights": {
+        "title": "5. Your rights",
+        "text": "Depending on applicable law, you may have the right to request access to your personal data, correction, deletion or restriction of its processing."
+      },
+      "contact": {
+        "title": "6. Contact",
+        "text": "If you have questions about privacy or the processing of personal data, please contact us through the contact page."
+      }
+    }
+  },
+
+  "cookies": {
+    "eyebrow": "Legal information",
+    "title": "Cookie Policy",
+    "description": "This policy explains how VV Work uses cookies and similar technologies when operating the platform.",
+    "sections": {
+      "what": {
+        "title": "1. What are cookies",
+        "text": "Cookies are small text files that a website may store in your browser to support certain functionality and remember preferences."
+      },
+      "types": {
+        "title": "2. Cookies we may use",
+        "text": "The platform may use essential cookies required for basic website functionality as well as cookies used to remember preferences selected by the user."
+      },
+      "purpose": {
+        "title": "3. Why we use cookies",
+        "text": "Cookies may be used to remember preferences, support stable interface functionality and improve the user experience."
+      },
+      "control": {
+        "title": "4. Managing cookies",
+        "text": "You can accept or reject optional cookies through the available platform settings. Cookies can also be controlled through your browser settings."
+      },
+      "changes": {
+        "title": "5. Changes to this policy",
+        "text": "We may update this policy periodically. The current version will always be available on this page."
+      }
+    }
+  },
+
+  "terms": {
+    "eyebrow": "Legal information",
+    "title": "Terms of Use",
+    "description": "These terms set out the basic rules for using the VV Work platform.",
+    "sections": {
+      "general": {
+        "title": "1. General provisions",
+        "text": "By using VV Work, you agree to use the platform in accordance with these terms and applicable law."
+      },
+      "service": {
+        "title": "2. Using the platform",
+        "text": "VV Work provides an interface for finding vacancies, employers and other employment-related information."
+      },
+      "responsibility": {
+        "title": "3. User responsibility",
+        "text": "Users are responsible for the accuracy of information they provide through the platform and for complying with applicable law."
+      },
+      "content": {
+        "title": "4. Platform information",
+        "text": "We aim to keep information up to date; however, vacancy conditions, employer details and other information may change."
+      },
+      "changes": {
+        "title": "5. Changes to the terms",
+        "text": "These terms may be updated as the platform develops. The current version is published on this page."
+      },
+      "contact": {
+        "title": "6. Contact",
+        "text": "If you have questions about these terms, you can contact the VV Work team through the contact page."
+      }
+    }
+  },
+
+  "notFound": {
+    "title": "Page not found",
+    "description": "It looks like the page you are looking for does not exist or has been moved.",
+    "home": "Go home",
+    "back": "Go back"
   }
 }
